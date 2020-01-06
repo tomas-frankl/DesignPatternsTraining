@@ -46,6 +46,7 @@
     <Compile Include="BlueCircle.cs" />
     <Compile Include="BlueFactory.cs" />
     <Compile Include="BlueSquare.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="ICircle.cs" />
     <Compile Include="IShapeFactory.cs" />
     <Compile Include="ISquare.cs" />
