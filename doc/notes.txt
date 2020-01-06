@@ -1,0 +1,18 @@
+GRASP
+https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
+
+Controller
+Creator (Factory)
+Indirection, Polymorhism, Protected variations (interface, dedicnost, abstrakce, zapouzdreni)
+Information expert 
+High cohesion (podobne veci patri k sobe)
+Low coupling (co nejmene vazeb)
+
+
+GOF design pattern
+Design Patterns: Elements of Reusable Object-Oriented Software
+ISBN: 0201633612
+https://www.nejlevnejsi-knihy.cz/kniha/design-patterns.html?gclid=EAIaIQobChMI05mFvczu5gIVweF3Ch0NsQ5pEAYYASABEgJZZ_D_BwE
+
+
+https://en.wikipedia.org/wiki/Design_Patterns
