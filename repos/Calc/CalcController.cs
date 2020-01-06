@@ -9,7 +9,7 @@ namespace Calc
     public class CalcController : ICalcController
     {
         ICalcModel calcModel;
-        public MainWindow MainView { get; set; }
+        public ICalcView CalcView { get; set; }
 
         public CalcController(ICalcModel calcModel)
         {
@@ -22,7 +22,7 @@ namespace Calc
             
             calcModel.Plus(dx);
 
-            MainView.UpdateView(calcModel.Result.ToString());
+            CalcView.UpdateView(calcModel.Result.ToString());
         }
     }
 }

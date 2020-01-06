@@ -4,6 +4,6 @@
     {
         void PlusAction(string x);
         
-        MainWindow MainView { get; set; }
+        ICalcView CalcView { get; set; }
     }
 }

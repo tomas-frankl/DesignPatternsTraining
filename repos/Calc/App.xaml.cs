@@ -18,7 +18,7 @@ namespace Calc
             var calculator = new CalcModel();
             var calcController = new CalcController(calculator);
             var mainView = new MainWindow(calcController);
-            calcController.MainView = mainView;
+            calcController.CalcView = mainView;
 
 
             MainWindow = mainView;

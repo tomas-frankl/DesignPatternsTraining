@@ -67,6 +67,7 @@
     <Compile Include="CalcModel.cs" />
     <Compile Include="ICalcController.cs" />
     <Compile Include="ICalcModel.cs" />
+    <Compile Include="ICalcView.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
