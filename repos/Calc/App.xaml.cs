@@ -13,5 +13,13 @@ namespace Calc
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var calculator = new Calculator();
+            var mainView = new MainWindow(calculator);
+            
+            MainWindow = mainView;
+            MainWindow.Show();
+        }
     }
 }

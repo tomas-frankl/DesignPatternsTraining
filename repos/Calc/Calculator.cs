@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calc
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
         public double Result { get; private set; }
 

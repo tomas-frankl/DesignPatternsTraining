@@ -21,10 +21,11 @@ namespace Calc
     public partial class MainWindow : Window
     {
 
-        Calculator calculator = new Calculator();
+        ICalculator calculator;
 
-        public MainWindow()
+        public MainWindow(ICalculator calculator)
         {
+            this.calculator = calculator;
             InitializeComponent();
         }
 
