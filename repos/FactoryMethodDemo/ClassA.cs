@@ -8,9 +8,11 @@ namespace FactoryMethodDemo
 {
     class ClassA
     {
+        protected virtual ClassB CreateClassB() => new ClassB();
+
         public void UseB()
         {
-            var b = new ClassB();
+            var b = CreateClassB();
             b.Use();
         }
     }

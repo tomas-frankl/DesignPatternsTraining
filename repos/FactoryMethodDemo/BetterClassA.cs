@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FactoryMethodDemo
 {
-    class ClassB
+    class BetterClassA : ClassA
     {
-        public void Use()
-        {
-            System.Console.WriteLine("B");
-        }
+        protected virtual BetterClassB CreateClassB() => new BetterClassB();
     }
 }

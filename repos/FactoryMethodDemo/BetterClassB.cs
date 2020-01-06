@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace FactoryMethodDemo
 {
-    class Program
+    class BetterClassB
     {
-        static void Main(string[] args)
+        public void Use()
         {
-            var CA = new ClassA();
-            CA.UseB();
-
-            var CA1 = new BetterClassA();
-            CA1.UseB();
-
+            System.Console.WriteLine("BetterB");
         }
     }
 }

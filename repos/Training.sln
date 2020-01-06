@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01SingletonDemo", "Singleton\01SingletonDemo.csproj", "{A48B3539-10E4-452D-AA2F-3D4C55B35759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodDemo", "FactoryMethodDemo\FactoryMethodDemo.csproj", "{EE2431F3-7582-4A79-B60A-B176E6D00043}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02FactoryMethodDemo", "FactoryMethodDemo\02FactoryMethodDemo.csproj", "{EE2431F3-7582-4A79-B60A-B176E6D00043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

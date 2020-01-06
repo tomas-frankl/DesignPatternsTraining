@@ -16,3 +16,5 @@ https://www.nejlevnejsi-knihy.cz/kniha/design-patterns.html?gclid=EAIaIQobChMI05
 
 
 https://en.wikipedia.org/wiki/Design_Patterns
+
+SOLID
