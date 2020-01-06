@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03AbstractFactoryDemo", "Ab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04SimpleFactoryAndSingleton", "04SimpleFactoryAndSingleton\04SimpleFactoryAndSingleton.csproj", "{5FEB8A2E-4337-40E4-BBA9-24FAED6AD57B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InversionOfControl", "InversionOfControl\InversionOfControl.csproj", "{10A97C33-CF1C-4C07-808C-6FE89A121244}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05InversionOfControl", "InversionOfControl\05InversionOfControl.csproj", "{10A97C33-CF1C-4C07-808C-6FE89A121244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
