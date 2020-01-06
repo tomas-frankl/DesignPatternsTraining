@@ -20,20 +20,23 @@ namespace Calc
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        ICalculator calculator;
-
-        public MainWindow(ICalculator calculator)
+        ICalcController calcController;
+ 
+        public MainWindow(ICalcController calcController)
         {
-            this.calculator = calculator;
+            this.calcController = calcController;
+
             InitializeComponent();
         }
 
         private void plusButton_Click(object sender, RoutedEventArgs e)
         {
-            var x = double.Parse(inputTextBox.Text);
-            calculator.Plus(x);
-            resultLabel.Content = calculator.Result;
+            calcController.PlusAction(inputTextBox.Text);
+        }
+
+        public void UpdateView(string result)
+        {
+            resultLabel.Content = result;
         }
     }
 }

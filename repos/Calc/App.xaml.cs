@@ -16,8 +16,11 @@ namespace Calc
         protected override void OnStartup(StartupEventArgs e)
         {
             var calculator = new Calculator();
-            var mainView = new MainWindow(calculator);
-            
+            var calcController = new CalcController(calculator);
+            var mainView = new MainWindow(calcController);
+            calcController.MainView = mainView;
+
+
             MainWindow = mainView;
             MainWindow.Show();
         }

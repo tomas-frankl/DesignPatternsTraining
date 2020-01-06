@@ -63,7 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CalcController.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="ICalcController.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
