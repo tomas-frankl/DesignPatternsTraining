@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Ninject;
 
 namespace Calc
 {
@@ -15,11 +16,15 @@ namespace Calc
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            var calculator = new CalcModel();
-            var calcController = new CalcController(calculator);
-            var mainView = new MainWindow(calcController);
-            calcController.CalcView = mainView;
+            var container = new StandardKernel();
+            container.Bind<ICalcModel>().To<CalcModel>();
+            container.Bind<ICalcController>().To<CalcController>();
+            container.Bind<ICalcView>().To<MainWindow>();
 
+            
+            
+            var calcController = container.Get<ICalcController>();
+            var mainView = new MainWindow(calcController);
 
             MainWindow = mainView;
             MainWindow.Show();
