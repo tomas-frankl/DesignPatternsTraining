@@ -8,21 +8,21 @@ namespace Calc
 {
     public class CalcController : ICalcController
     {
-        ICalculator calculator;
+        ICalcModel calcModel;
         public MainWindow MainView { get; set; }
 
-        public CalcController(ICalculator calculator)
+        public CalcController(ICalcModel calcModel)
         {
-            this.calculator = calculator;
+            this.calcModel = calcModel;
         }
 
         public void PlusAction(string x)
         {
             var dx = double.Parse(x);
             
-            calculator.Plus(dx);
+            calcModel.Plus(dx);
 
-            MainView.UpdateView(calculator.Result.ToString());
+            MainView.UpdateView(calcModel.Result.ToString());
         }
     }
 }

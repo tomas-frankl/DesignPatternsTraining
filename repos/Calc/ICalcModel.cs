@@ -1,6 +1,6 @@
 ﻿namespace Calc
 {
-    public interface ICalculator
+    public interface ICalcModel
     {
         double Result { get; }
 
