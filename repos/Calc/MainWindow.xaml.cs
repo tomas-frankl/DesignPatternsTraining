@@ -20,6 +20,9 @@ namespace Calc
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        Calculator calculator = new Calculator();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,9 +30,9 @@ namespace Calc
 
         private void plusButton_Click(object sender, RoutedEventArgs e)
         {
-            resultLabel.Content =
-                double.Parse(resultLabel.Content.ToString()) 
-                + double.Parse(inputTextBox.Text);
+            var x = double.Parse(inputTextBox.Text);
+            calculator.Plus(x);
+            resultLabel.Content = calculator.Result;
         }
     }
 }
