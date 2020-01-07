@@ -12,5 +12,6 @@ namespace Calc.Models
         IEnumerable<string> LogItems { get; }
         void Plus(double obj);
         void Minus(double obj);
+        bool Login(string userName, string password);
     }
 }

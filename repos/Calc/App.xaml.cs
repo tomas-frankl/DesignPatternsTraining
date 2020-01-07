@@ -24,15 +24,22 @@ namespace Calc
             //models
             container.Bind<ICalcModel>().To<CalcModel>();
             container.Bind<ILogger>().To<Logger>().InSingletonScope();
+            container.Bind<IAuth>().To<Auth>().InSingletonScope();
             container.Bind<IModelFacade>().To<ModelFacade>().InSingletonScope();
-            container.Bind<IErrorView>().To<ErrorView>().InSingletonScope();
+
+            //view
+            container.Bind<IErrorView>().To<ErrorView>().InSingletonScope().Named("Error");
+            container.Bind<ILoginView>().To<LoginWindow>().InSingletonScope().Named("Login");
+            container.Bind<ILogView>().To<LogWindow>().InSingletonScope().Named("Log");
+            container.Bind<ICalcView>().To<MainWindow>().InSingletonScope().Named("Main");
 
             //controllers
             container.Bind<ICalcController>().To<CalcController>();
-            
-            //view
-            MainWindow = container.Get<MainWindow>();
-            MainWindow.Show();
+            container.Bind<ILoginController>().To<LoginController>().InSingletonScope();
+
+            //display login window
+            var LoginView = container.Get<ILoginView>();
+            ((Window)LoginView).Show();
         }
     }
 }

@@ -77,5 +77,10 @@ namespace Calc.Controllers
         {
             ErrorView.DisplayError(errorMessage);
         }
+
+        public void ExitApplication()
+        {
+            App.Current.Shutdown();
+        }
     }
 }

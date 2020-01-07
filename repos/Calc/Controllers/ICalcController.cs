@@ -8,5 +8,6 @@
         ICalcView CalcView { get; set; }
 
         void ShowLogWindowAction();
+        void ExitApplication();
     }
 }

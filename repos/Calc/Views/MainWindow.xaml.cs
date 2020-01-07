@@ -50,5 +50,10 @@ namespace Calc.Views
         {
             calcController.ShowLogWindowAction();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            calcController.ExitApplication();
+        }
     }
 }

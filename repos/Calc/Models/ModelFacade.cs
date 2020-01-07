@@ -11,11 +11,13 @@ namespace Calc.Models
     {
         ICalcModel calcModel;
         ILogger logger;
+        IAuth auth;
 
-        public ModelFacade(ICalcModel calcModel, ILogger logger)
+        public ModelFacade(ICalcModel calcModel, ILogger logger, IAuth auth)
         {
             this.calcModel = calcModel;
             this.logger = logger;
+            this.auth = auth;
         }
 
         public double Result => calcModel.Result;
@@ -32,6 +34,11 @@ namespace Calc.Models
         {
             calcModel.Plus(obj);
             logger.Write($"Plus operation, operator:{obj}, result:{calcModel.Result}");
+        }
+
+        public bool Login(string userName, string password)
+        {
+            return auth.Login(userName, password);
         }
     }
 }
