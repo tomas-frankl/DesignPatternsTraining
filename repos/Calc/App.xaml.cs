@@ -25,7 +25,8 @@ namespace Calc
             container.Bind<ICalcModel>().To<CalcModel>();
             container.Bind<ILogger>().To<Logger>().InSingletonScope();
             container.Bind<IModelFacade>().To<ModelFacade>().InSingletonScope();
-            
+            container.Bind<IErrorView>().To<ErrorView>().InSingletonScope();
+
             //controllers
             container.Bind<ICalcController>().To<CalcController>();
             
