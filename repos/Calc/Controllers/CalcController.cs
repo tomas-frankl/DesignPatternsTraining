@@ -20,7 +20,10 @@ namespace Calc.Controllers
             var dx = double.Parse(x);
             operation(dx);
             CalcView.UpdateView(calcModel.Result.ToString());
+            
             LogView?.UpdateView(calcModel.LogItems);
+            //2.
+            //stejne tak zde funguje controller jako mediator, protoze zprostredkovama update log window
         }
 
         public CalcController(IModelFacade calcModel)
@@ -40,6 +43,8 @@ namespace Calc.Controllers
             }
 
             LogView.UpdateView(calcModel.LogItems);
+            //1.
+            //kdyz by bylo vice ruznych oken, volajicich tuto akci pro zobrazeni logu, tak Controller bude zaroven fungovat jako Mediator
+            //muze to byt implementovano jako samostatna trida        }
         }
     }
-}
