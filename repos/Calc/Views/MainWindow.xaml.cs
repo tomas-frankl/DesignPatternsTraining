@@ -26,8 +26,6 @@ namespace Calc.Views
         public MainWindow(ICalcController calcController)
         {
             this.calcController = calcController;
-            calcController.CalcView = this;
-
             InitializeComponent();
         }
 

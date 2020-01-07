@@ -1,5 +1,6 @@
 ﻿using Calc.Models;
 using Calc.Views;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,9 @@ namespace Calc.Controllers
 {
     public class CalcController : ICalcController
     {
-        IModelFacade calcModel;
-        public ICalcView CalcView { get; set; }
+        IKernel container;
+        public IModelFacade calcModel;
         public ILogView LogView { get; set; }
-        public IErrorView ErrorView { get; set; }
 
         private double getOperand(string x)
         {
@@ -44,16 +44,16 @@ namespace Calc.Controllers
                 ShowErrorWindowAction($"{ex.Message} {ex?.InnerException.Message}");
             }
 
-            CalcView.UpdateView(calcModel.Result.ToString());
+            container.Get<ICalcView>().UpdateView(calcModel.Result.ToString());
             LogView?.UpdateView(calcModel.LogItems);
             //2.
             //stejne tak zde funguje controller jako mediator, protoze zprostredkovama update log window
         }
 
-        public CalcController(IModelFacade calcModel, IErrorView errorView)
+        public CalcController(IKernel container)
         {
-            this.calcModel = calcModel;
-            this.ErrorView = errorView;
+            this.container = container;
+            this.calcModel = container.Get<IModelFacade>();
         }
 
         public void PlusAction(string x) => calculate(calcModel.Plus, x);
@@ -75,7 +75,7 @@ namespace Calc.Controllers
 
         public void ShowErrorWindowAction(string errorMessage)
         {
-            ErrorView.DisplayError(errorMessage);
+            container.Get<IErrorView>().DisplayError(errorMessage);
         }
 
         public void ExitApplication()
