@@ -11,26 +11,19 @@ namespace Calc
         ICalcModel calcModel;
         public ICalcView CalcView { get; set; }
 
+        private void calculate(Action<double> operation, string x)
+        {
+            var dx = double.Parse(x);
+            operation(dx);
+            CalcView.UpdateView(calcModel.Result.ToString());
+        }
+
         public CalcController(ICalcModel calcModel)
         {
             this.calcModel = calcModel;
         }
 
-        public void PlusAction(string x)
-        {
-            var dx = double.Parse(x);
-            
-            calcModel.Plus(dx);
-
-            CalcView.UpdateView(calcModel.Result.ToString());
-        }
-        public void MinusAction(string x)
-        {
-            var dx = double.Parse(x);
-
-            calcModel.Minus(dx);
-
-            CalcView.UpdateView(calcModel.Result.ToString());
-        }
+        public void PlusAction(string x) => calculate(calcModel.Plus, x);
+        public void MinusAction(string x) => calculate(calcModel.Minus, x); 
     }
 }
