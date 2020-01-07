@@ -8,7 +8,7 @@
         Title="MainWindow" Height="163.821" Width="583.595">
     <StackPanel Margin="0,0,17,26">
         <Label Name="resultLabel">0</Label>
-        <TextBox Name="inputTextBox"></TextBox>
+        <TextBox Name="inputTextBox">1</TextBox>
         <Button Name="plusButton" Click="plusButton_Click">+</Button>
         <Button Name="minusButton" Click="minusButton_Click">-</Button>
     </StackPanel>
