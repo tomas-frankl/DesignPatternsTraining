@@ -9,7 +9,7 @@ namespace Calc.Controllers
 {
     public class CalcController : ICalcController
     {
-        ICalcModel calcModel;
+        IModelFacade calcModel;
         public ICalcView CalcView { get; set; }
 
         private void calculate(Action<double> operation, string x)
@@ -19,7 +19,7 @@ namespace Calc.Controllers
             CalcView.UpdateView(calcModel.Result.ToString());
         }
 
-        public CalcController(ICalcModel calcModel)
+        public CalcController(IModelFacade calcModel)
         {
             this.calcModel = calcModel;
         }

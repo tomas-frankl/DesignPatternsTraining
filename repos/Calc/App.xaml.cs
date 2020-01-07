@@ -20,9 +20,16 @@ namespace Calc
         protected override void OnStartup(StartupEventArgs e)
         {
             var container = new StandardKernel();
+            
+            //models
             container.Bind<ICalcModel>().To<CalcModel>();
+            container.Bind<ILogger>().To<Logger>().InSingletonScope();
+            container.Bind<IModelFacade>().To<ModelFacade>().InSingletonScope();
+            
+            //controllers
             container.Bind<ICalcController>().To<CalcController>();
-
+            
+            //view
             MainWindow = container.Get<MainWindow>();
             MainWindow.Show();
         }
