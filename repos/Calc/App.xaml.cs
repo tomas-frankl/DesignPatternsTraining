@@ -19,14 +19,8 @@ namespace Calc
             var container = new StandardKernel();
             container.Bind<ICalcModel>().To<CalcModel>();
             container.Bind<ICalcController>().To<CalcController>();
-            container.Bind<ICalcView>().To<MainWindow>();
 
-            
-            
-            var calcController = container.Get<ICalcController>();
-            var mainView = new MainWindow(calcController);
-
-            MainWindow = mainView;
+            MainWindow = container.Get<MainWindow>();
             MainWindow.Show();
         }
     }

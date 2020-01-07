@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04SimpleFactoryAndSingleton
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05InversionOfControl", "InversionOfControl\05InversionOfControl.csproj", "{10A97C33-CF1C-4C07-808C-6FE89A121244}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{CB71222A-929D-4576-AA8B-72E8DE516EFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06Calc", "Calc\06Calc.csproj", "{CB71222A-929D-4576-AA8B-72E8DE516EFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

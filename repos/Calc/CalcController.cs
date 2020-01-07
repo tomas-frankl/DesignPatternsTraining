@@ -24,5 +24,13 @@ namespace Calc
 
             CalcView.UpdateView(calcModel.Result.ToString());
         }
+        public void MinusAction(string x)
+        {
+            var dx = double.Parse(x);
+
+            calcModel.Minus(dx);
+
+            CalcView.UpdateView(calcModel.Result.ToString());
+        }
     }
 }

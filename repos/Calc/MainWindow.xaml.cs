@@ -35,6 +35,11 @@ namespace Calc
             calcController.PlusAction(inputTextBox.Text);
         }
 
+        private void minusButton_Click(object sender, RoutedEventArgs e)
+        {
+            calcController.MinusAction(inputTextBox.Text);
+        }
+
         public void UpdateView(string result)
         {
             resultLabel.Content = result;
