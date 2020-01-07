@@ -1,4 +1,4 @@
-﻿namespace Calc
+﻿namespace Calc.Controllers
 {
     public interface ICalcController
     {

@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Calc.Models;
+using Calc.Controllers;
+using Calc.Views;
 using Ninject;
 
 namespace Calc

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Calc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calc
+namespace Calc.Controllers
 {
     public class CalcController : ICalcController
     {

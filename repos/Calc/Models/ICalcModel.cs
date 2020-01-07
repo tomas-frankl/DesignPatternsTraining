@@ -1,4 +1,4 @@
-﻿namespace Calc
+﻿namespace Calc.Models
 {
     public interface ICalcModel
     {
