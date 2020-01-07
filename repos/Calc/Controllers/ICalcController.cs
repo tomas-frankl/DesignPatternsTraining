@@ -6,5 +6,7 @@
         void MinusAction(string x);
 
         ICalcView CalcView { get; set; }
+
+        void ShowLogWindowAction();
     }
 }

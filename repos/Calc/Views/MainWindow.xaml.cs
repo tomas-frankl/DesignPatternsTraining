@@ -45,5 +45,10 @@ namespace Calc.Views
         {
             resultLabel.Content = result;
         }
+
+        private void showLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            calcController.ShowLogWindowAction();
+        }
     }
 }
