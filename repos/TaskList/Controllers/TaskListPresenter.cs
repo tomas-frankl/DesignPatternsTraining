@@ -1,9 +1,9 @@
 ﻿using System;
 using TaskList.Models;
 
-namespace TaskList.Controllers
+namespace TaskList.Presenters
 {
-    public class TaskListController : ITaskListController
+    public class TaskListPresenter : ITaskListPresenter
     {
         private ITaskListModel model;
         public ITaskListView<TaskItem> view;
@@ -13,7 +13,7 @@ namespace TaskList.Controllers
             set { this.view = value; Refresh();} 
         }
 
-        public TaskListController(ITaskListModel model)
+        public TaskListPresenter(ITaskListModel model)
         {
             this.model = model;
         }

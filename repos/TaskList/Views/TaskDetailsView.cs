@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using System;
 using System.Windows.Forms;
-using TaskList.Controllers;
+using TaskList.Presenters;
 using TaskList.Models;
 
 namespace TaskList.Views
@@ -10,14 +10,14 @@ namespace TaskList.Views
     {
 
         private IKernel container;
-        private ITaskListController controller;
+        private ITaskListPresenter presenter;
         private TaskItem item;
 
         public TaskDetailsView(IKernel container, TaskItem item)
         {
             this.container = container;
             this.item = item;
-            this.controller = container.Get<ITaskListController>();
+            this.presenter = container.Get<ITaskListPresenter>();
 
             InitializeComponent();
 
@@ -29,13 +29,13 @@ namespace TaskList.Views
         {
             if (item.Id == Guid.Empty)
             {
-                controller.Add(new TaskItem() { Id = Guid.NewGuid(), Description = textBoxDescription.Text, Done = checkBoxDone.Checked });
+                presenter.Add(new TaskItem() { Id = Guid.NewGuid(), Description = textBoxDescription.Text, Done = checkBoxDone.Checked });
             }
             else
             {
                 item.Description = textBoxDescription.Text;
                 item.Done = checkBoxDone.Checked;
-                controller.Update(item);
+                presenter.Update(item);
             }
 
             Close();

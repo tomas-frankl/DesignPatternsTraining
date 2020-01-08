@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using System;
 using System.Windows.Forms;
-using TaskList.Controllers;
+using TaskList.Presenters;
 using TaskList.Models;
 using TaskList.Views;
 
@@ -17,7 +17,7 @@ namespace TaskList
         {
             var container = new StandardKernel();
             container.Bind<ITaskListModel>().To<TaskListModel>().InSingletonScope();
-            container.Bind<ITaskListController>().To<TaskListController>().InSingletonScope();
+            container.Bind<ITaskListPresenter>().To<TaskListPresenter>().InSingletonScope();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

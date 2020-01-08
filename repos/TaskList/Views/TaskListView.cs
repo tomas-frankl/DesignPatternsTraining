@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using TaskList.Controllers;
+using TaskList.Presenters;
 using TaskList.Models;
 
 namespace TaskList.Views
@@ -11,16 +11,16 @@ namespace TaskList.Views
     public partial class TaskListView : Form, ITaskListView<TaskItem>
     {
         private IKernel container;
-        private ITaskListController controller;
+        private ITaskListPresenter presenter;
 
         public TaskListView(IKernel container)
         {
             this.container = container;
-            this.controller = container.Get<ITaskListController>();
+            this.presenter = container.Get<ITaskListPresenter>();
             
             InitializeComponent();
 
-            this.controller.View = this;
+            this.presenter.View = this;
         }
 
         public void OnListUpdated(IEnumerable<TaskItem> list)
@@ -34,21 +34,21 @@ namespace TaskList.Views
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            controller.AddAction();
+            presenter.AddAction();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
-                controller.DeleteAction(item.Id);
+                presenter.DeleteAction(item.Id);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
-                controller.EditAction(item.Id);
+                presenter.EditAction(item.Id);
         }
 
         private void listBoxTasks_DoubleClick(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace TaskList.Views
             if (item != null)
             {
                 item.Done = !item.Done;
-                controller.Update(item);
+                presenter.Update(item);
             }
         }
 
@@ -77,7 +77,7 @@ namespace TaskList.Views
         {
             if (MessageBox.Show($"Delete item \"{item.Description}\"", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                controller.Delete(item);
+                presenter.Delete(item);
             }
         }
 

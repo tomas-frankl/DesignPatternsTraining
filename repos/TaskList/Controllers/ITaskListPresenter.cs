@@ -1,9 +1,9 @@
 ﻿using System;
 using TaskList.Models;
 
-namespace TaskList.Controllers
+namespace TaskList.Presenters
 {
-    public interface ITaskListController
+    public interface ITaskListPresenter
     {
         ITaskListView<TaskItem> View { get; set; }
 
