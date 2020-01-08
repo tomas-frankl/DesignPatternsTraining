@@ -1,4 +1,5 @@
 ﻿using Calc.Controllers;
+using Calc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,15 @@ namespace Calc.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ICalcView
+    public partial class MainWindow : Window, IView
     {
         ICalcController calcController;
- 
-        public MainWindow(ICalcController calcController)
+        IModelFacade model;
+
+        public MainWindow(ICalcController calcController, IModelFacade model)
         {
             this.calcController = calcController;
+            this.model = model;
             InitializeComponent();
         }
 
@@ -39,11 +42,6 @@ namespace Calc.Views
             calcController.MinusAction(inputTextBox.Text);
         }
 
-        public void UpdateView(string result)
-        {
-            resultLabel.Content = result;
-        }
-
         private void showLogButton_Click(object sender, RoutedEventArgs e)
         {
             calcController.ShowLogWindowAction();
@@ -52,6 +50,11 @@ namespace Calc.Views
         private void Window_Closed(object sender, EventArgs e)
         {
             calcController.ExitApplication();
+        }
+
+        public void UpdateView()
+        {
+            resultLabel.Content = model.Result; 
         }
     }
 }

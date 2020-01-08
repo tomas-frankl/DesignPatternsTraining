@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\WpfViewHandler.cs" />
     <Page Include="Views\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,17 +76,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CalcController.cs" />
-    <Compile Include="Controllers\IErrorView.cs" />
     <Compile Include="Controllers\ILoginController.cs" />
-    <Compile Include="Controllers\ILoginView.cs" />
-    <Compile Include="Controllers\ILogView.cs" />
+    <Compile Include="Controllers\IView.cs" />
+    <Compile Include="Controllers\IViewHandler.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Models\Auth.cs" />
     <Compile Include="Models\CalcModel.cs" />
     <Compile Include="Controllers\ICalcController.cs" />
     <Compile Include="Models\IAuth.cs" />
     <Compile Include="Models\ICalcModel.cs" />
-    <Compile Include="Controllers\ICalcView.cs" />
     <Compile Include="Models\ILogger.cs" />
     <Compile Include="Models\IModelFacade.cs" />
     <Compile Include="Models\Logger.cs" />

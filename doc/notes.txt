@@ -18,3 +18,23 @@ https://www.nejlevnejsi-knihy.cz/kniha/design-patterns.html?gclid=EAIaIQobChMI05
 https://en.wikipedia.org/wiki/Design_Patterns
 
 SOLID
+
+
+--------------------------------------------------------------------------------------------------------------
+
+GUI - 2 View - MVP
+
+ListView
+-----------
+nazev tasku, status (done/not done)
+Akce: Add, Edit, Delete
+
+
+DetailView (vice instanci)
+-----------
+nazev tasku, 
+status (done/not done)
+button Save/Cancel
+
+
+

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Calc.Controllers
 {
-    //callback interface - proto Controller predepisuje vzhled rozhrani
-    public interface ICalcView
+    interface IView
     {
-        void UpdateView(string result);
+        void UpdateView();
     }
 }

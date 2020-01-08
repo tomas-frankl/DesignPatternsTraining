@@ -1,4 +1,5 @@
 ﻿using Calc.Controllers;
+using Calc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +19,20 @@ namespace Calc.Views
     /// <summary>
     /// Interaction logic for LogWindow.xaml
     /// </summary>
-    public partial class LogWindow : Window, ILogView
+    public partial class LogWindow : Window, IView
     {
+        IModelFacade model;
 
-        public LogWindow()
+        public LogWindow(IModelFacade model)
         {
+            this.model = model;
             InitializeComponent();
         }
 
-        public void UpdateView(IEnumerable<string> logItems)
+        public void UpdateView()
         {
             itemsListBox.Items.Clear();
-            foreach (var item in logItems)
+            foreach (var item in model.LogItems)
                 itemsListBox.Items.Add(item);
         }
     }

@@ -8,11 +8,18 @@ using System.Windows;
 
 namespace Calc.Views
 {
-    public class ErrorView : IErrorView
+    public class ErrorView : IView
     {
-        public void DisplayError(string errorMessage)
+        ICalcController calcController;
+
+        public ErrorView(ICalcController calcController)
         {
-            System.Windows.MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            this.calcController = calcController;
+        }
+
+        public void UpdateView()
+        {
+            System.Windows.MessageBox.Show(calcController.ErrorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

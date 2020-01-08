@@ -19,7 +19,7 @@ namespace Calc.Views
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window, ILoginView
+    public partial class LoginWindow : Window, IView
     {
         //IModelFacade modelFacade;
         ILoginController loginController;
@@ -29,6 +29,10 @@ namespace Calc.Views
             this.loginController = loginController;
 
             InitializeComponent();
+        }
+
+        public void UpdateView()
+        {
         }
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)

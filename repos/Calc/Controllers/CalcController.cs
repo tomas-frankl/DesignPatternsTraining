@@ -14,7 +14,9 @@ namespace Calc.Controllers
     {
         IKernel container;
         public IModelFacade calcModel;
-        public ILogView LogView { get; set; }
+        IViewHandler viewHandler;
+        IView LogView { get; set; }
+        public string ErrorMessage { get; set; }
 
         private double getOperand(string x)
         {
@@ -44,8 +46,9 @@ namespace Calc.Controllers
                 ShowErrorWindowAction($"{ex.Message} {ex?.InnerException.Message}");
             }
 
-            container.Get<ICalcView>().UpdateView(calcModel.Result.ToString());
-            LogView?.UpdateView(calcModel.LogItems);
+            
+            container.Get<IView>("Main").UpdateView();
+            LogView?.UpdateView();
             //2.
             //stejne tak zde funguje controller jako mediator, protoze zprostredkovama update log window
         }
@@ -53,6 +56,7 @@ namespace Calc.Controllers
         public CalcController(IKernel container)
         {
             this.container = container;
+            this.viewHandler = container.Get<IViewHandler>();
             this.calcModel = container.Get<IModelFacade>();
         }
 
@@ -61,13 +65,12 @@ namespace Calc.Controllers
 
         public void ShowLogWindowAction()
         {
-            if (LogView == null || !((Window)LogView).IsVisible)
+            if (!viewHandler.IsReady(LogView))
             {
-                LogView = new LogWindow();
-                ((Window)LogView).Show();
+                viewHandler.Show(LogView);
             }
 
-            LogView.UpdateView(calcModel.LogItems);
+            LogView.UpdateView();
             //1.
             //kdyz by bylo vice ruznych oken, volajicich tuto akci pro zobrazeni logu, tak Controller bude zaroven fungovat jako Mediator
             //muze to byt implementovano jako samostatna trida        }
@@ -75,7 +78,8 @@ namespace Calc.Controllers
 
         public void ShowErrorWindowAction(string errorMessage)
         {
-            container.Get<IErrorView>().DisplayError(errorMessage);
+            this.ErrorMessage = errorMessage;
+            container.Get<IView>("Error").UpdateView();
         }
 
         public void ExitApplication()

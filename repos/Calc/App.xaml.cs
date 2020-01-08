@@ -28,17 +28,18 @@ namespace Calc
             container.Bind<IModelFacade>().To<ModelFacade>().InSingletonScope();
 
             //view
-            container.Bind<IErrorView>().To<ErrorView>().InSingletonScope().Named("Error");
-            container.Bind<ILoginView>().To<LoginWindow>().InSingletonScope().Named("Login");
-            container.Bind<ILogView>().To<LogWindow>().InSingletonScope().Named("Log");
-            container.Bind<ICalcView>().To<MainWindow>().InSingletonScope().Named("Main");
+            container.Bind<IView>().To<ErrorView>().InSingletonScope().Named("Error");
+            container.Bind<IView>().To<LoginWindow>().InSingletonScope().Named("Login");
+            container.Bind<IView>().To<LogWindow>().InSingletonScope().Named("Log");
+            container.Bind<IView>().To<MainWindow>().InSingletonScope().Named("Main");
 
             //controllers
-            container.Bind<ICalcController>().To<CalcController>();
+            container.Bind<ICalcController>().To<CalcController>().InSingletonScope();
             container.Bind<ILoginController>().To<LoginController>().InSingletonScope();
+            container.Bind<IViewHandler>().To<WpfViewHandler>().InSingletonScope();
 
             //display login window
-            var LoginView = container.Get<ILoginView>();
+            var LoginView = container.Get<IView>("Login");
             ((Window)LoginView).Show();
         }
     }

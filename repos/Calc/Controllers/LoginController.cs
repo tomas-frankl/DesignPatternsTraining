@@ -13,18 +13,18 @@ namespace Calc.Controllers
     class LoginController : ILoginController
     {
         IModelFacade model;
-        ILoginView loginView { get; set; }
-        ICalcView mainView { get; set; }
-        IErrorView errorView { get; set; }
+        IView mainView { get; set; }
+        IView errorView { get; set; }
+
+        IViewHandler viewHandler;
 
         IKernel container;
 
-        public LoginController(IKernel container, IModelFacade model, IErrorView errorView)
+        public LoginController(IKernel container)
         {
             this.container = container;
-            this.model = model;
-            //this.model = container.Get<IModelFacade>();
-            this.errorView = errorView;
+            this.model = container.Get<IModelFacade>();
+            this.viewHandler = container.Get<IViewHandler>();
         }
 
         public void LoginAction(string userName, string password)
@@ -32,18 +32,20 @@ namespace Calc.Controllers
             if(model.Login(userName, password))
             {
                 //hide login
-                loginView = container.Get<ILoginView>();
-                ((Window)loginView).Hide();
-                if (mainView==null)
+                var loginView = container.Get<IView>("Login");
+                viewHandler.Hide(loginView);
+
+                if (!viewHandler.IsReady(mainView))
                 {
-                    mainView = container.Get<ICalcView>();
-                    ((Window)mainView).Show();
+                    
+                    mainView = container.Get<IView>("Main");
+                    viewHandler.Show(mainView);
                 }
             }
             else
             {
                 //show error
-                errorView.DisplayError("Wrong credentials");
+                container.Get<IView>("Error").UpdateView();
             }
         }
     }
