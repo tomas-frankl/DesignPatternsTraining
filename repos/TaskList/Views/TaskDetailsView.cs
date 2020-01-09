@@ -25,7 +25,7 @@ namespace TaskList.Views
             checkBoxDone.Checked = item.Done;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void SaveAndClose()
         {
             if (item.Id == Guid.Empty)
             {
@@ -39,6 +39,18 @@ namespace TaskList.Views
             }
 
             Close();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveAndClose();
+        }
+
+
+        private void TaskDetailsView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                SaveAndClose();
         }
     }
 }

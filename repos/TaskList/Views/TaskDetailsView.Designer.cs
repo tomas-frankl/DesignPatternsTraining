@@ -45,6 +45,7 @@ namespace TaskList.Views
             this.checkBoxDone.TabIndex = 1;
             this.checkBoxDone.Text = "checkBox1";
             this.checkBoxDone.UseVisualStyleBackColor = true;
+            this.checkBoxDone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TaskDetailsView_KeyDown);
             // 
             // textBoxDescription
             // 
@@ -52,9 +53,11 @@ namespace TaskList.Views
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(382, 20);
             this.textBoxDescription.TabIndex = 0;
+            this.textBoxDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TaskDetailsView_KeyDown);
             // 
             // buttonSave
             // 
+            this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonSave.Location = new System.Drawing.Point(333, 89);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +76,7 @@ namespace TaskList.Views
             this.Controls.Add(this.checkBoxDone);
             this.Name = "TaskDetailsView";
             this.Text = "TaskDetailsView";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TaskDetailsView_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,7 +17,7 @@ namespace TaskList.Views
         {
             this.container = container;
             this.presenter = container.Get<ITaskListPresenter>();
-            
+
             InitializeComponent();
 
             this.presenter.View = this;
@@ -34,29 +34,54 @@ namespace TaskList.Views
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            presenter.AddAction();
+            AddAction();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteAction();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            EditAction();
+        }
+
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            UndoAction();
+        }
+
+        private void listBoxTasks_DoubleClick(object sender, EventArgs e)
+        {
+            ToggleAction();
+        }
+
+        private void AddAction()
+        {
+            presenter.AddAction();
+        }
+
+        private void DeleteAction()
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
                 presenter.DeleteAction(item.Id);
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void EditAction()
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
                 presenter.EditAction(item.Id);
         }
 
-        private void buttonUndo_Click(object sender, EventArgs e)
+        private void UndoAction()
         {
             presenter.UndoAction();
         }
-        
-        private void listBoxTasks_DoubleClick(object sender, EventArgs e)
+
+        private void ToggleAction()
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
@@ -94,8 +119,20 @@ namespace TaskList.Views
                 Brush myBrush = item.Done ? Brushes.DarkGray : Brushes.Black;
                 e.Graphics.DrawString(item.Description, e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
             }
-            
+
             e.DrawFocusRectangle();
+        }
+
+        private void listBoxTasks_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Insert: AddAction(); break;
+                case Keys.Delete: DeleteAction(); break;
+                case Keys.Enter: EditAction(); break;
+                case Keys.Back: UndoAction(); break;
+                case Keys.Space: ToggleAction(); break;
+            }
         }
     }
 }

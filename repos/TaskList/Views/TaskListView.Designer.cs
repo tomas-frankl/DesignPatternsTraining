@@ -47,6 +47,7 @@ namespace TaskList.Views
             this.listBoxTasks.TabIndex = 0;
             this.listBoxTasks.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBoxTasks_DrawItem);
             this.listBoxTasks.DoubleClick += new System.EventHandler(this.listBoxTasks_DoubleClick);
+            this.listBoxTasks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxTasks_KeyDown);
             // 
             // buttonAdd
             // 
