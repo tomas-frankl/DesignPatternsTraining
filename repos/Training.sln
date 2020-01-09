@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11PrototypePatern", "Protot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12ChainOfResponsibility", "ChainOfResponsibility\12ChainOfResponsibility.csproj", "{D75E3D9A-A986-4A54-BBD3-6A3831F2D824}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13FilterAndPipes", "FilterAndPipes\13FilterAndPipes.csproj", "{5F368212-D6B3-4258-AD42-AD430502C59E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{D75E3D9A-A986-4A54-BBD3-6A3831F2D824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D75E3D9A-A986-4A54-BBD3-6A3831F2D824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D75E3D9A-A986-4A54-BBD3-6A3831F2D824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F368212-D6B3-4258-AD42-AD430502C59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F368212-D6B3-4258-AD42-AD430502C59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F368212-D6B3-4258-AD42-AD430502C59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F368212-D6B3-4258-AD42-AD430502C59E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
