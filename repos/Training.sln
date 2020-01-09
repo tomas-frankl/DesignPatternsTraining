@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08CommandDemo", "CommandDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09CommandProcessor", "CommandProcessor\09CommandProcessor.csproj", "{4D0096A0-FF58-4D6B-85F0-9F07324F29CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10MVVMCalculator", "MVVMCalculator\10MVVMCalculator.csproj", "{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{4D0096A0-FF58-4D6B-85F0-9F07324F29CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D0096A0-FF58-4D6B-85F0-9F07324F29CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D0096A0-FF58-4D6B-85F0-9F07324F29CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
