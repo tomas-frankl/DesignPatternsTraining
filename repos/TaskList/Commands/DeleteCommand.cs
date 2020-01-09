@@ -8,15 +8,16 @@ namespace TaskList.Commands
         public ITaskListModel Receiver { get; set; }
 
         public TaskItem Item { private get; set; }
+        public int Index { private get; set; }
 
         public void Compensate()
         {
-            Receiver.Add(Item);
+            Receiver.Insert(Item, Index);
         }
 
         public void Execute()
         {
-            Receiver.Delete(Item);
+            Index = Receiver.Delete(Item);
         }
     }
 }

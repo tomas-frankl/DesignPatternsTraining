@@ -20,9 +20,16 @@ namespace TaskList.Models
             taskList.Add(item);
         }
 
-        public void Delete(TaskItem item)
+        public void Insert(TaskItem item, int index)
         {
-            taskList.RemoveAll(t => t.Id == item.Id);
+            taskList.Insert(index, item);
+        }
+
+        public int Delete(TaskItem item)
+        {
+            var idx = taskList.FindIndex(t => t.Id == item.Id);
+            taskList.RemoveAt(idx);
+            return idx;
         }
 
         public void Update(TaskItem item)
