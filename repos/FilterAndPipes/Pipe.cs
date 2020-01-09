@@ -1,13 +1,13 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace FilterAndPipes
 {
     public class Pipe
     {
-        public string Name { get; }
-        public Pipe(string name)
+        public Pipe()
         {
-            Name = name;
         }
 
         ConcurrentQueue<Order> queue = new ConcurrentQueue<Order>();

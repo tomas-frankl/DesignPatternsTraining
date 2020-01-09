@@ -48,6 +48,7 @@
     <Compile Include="FilterBase.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pipe.cs" />
+    <Compile Include="Pipeline.cs" />
     <Compile Include="PriceFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
