@@ -11,7 +11,10 @@ namespace TaskList.Presenters
         void AddAction();
         void DeleteAction(Guid id);
         void EditAction(Guid id);
-        
+        void ToggleAction(Guid id);
+        void UndoAction();
+
+
         void Add(TaskItem item);
         void Update(TaskItem item);
         void Delete(TaskItem item);

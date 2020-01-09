@@ -34,6 +34,7 @@ namespace TaskList.Views
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonUndo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxTasks
@@ -53,7 +54,7 @@ namespace TaskList.Views
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "&Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -63,7 +64,7 @@ namespace TaskList.Views
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 2;
-            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.Text = "&Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
@@ -73,15 +74,26 @@ namespace TaskList.Views
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonEdit.TabIndex = 3;
-            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.Text = "&Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonUndo
+            // 
+            this.buttonUndo.Location = new System.Drawing.Point(646, 439);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(75, 23);
+            this.buttonUndo.TabIndex = 4;
+            this.buttonUndo.Text = "&Undo";
+            this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
             // TaskListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 479);
+            this.Controls.Add(this.buttonUndo);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
@@ -98,6 +110,7 @@ namespace TaskList.Views
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonUndo;
     }
 }
 

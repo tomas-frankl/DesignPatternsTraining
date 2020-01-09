@@ -42,7 +42,7 @@ namespace TaskList.Views
             this.checkBoxDone.Location = new System.Drawing.Point(26, 52);
             this.checkBoxDone.Name = "checkBoxDone";
             this.checkBoxDone.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxDone.TabIndex = 0;
+            this.checkBoxDone.TabIndex = 1;
             this.checkBoxDone.Text = "checkBox1";
             this.checkBoxDone.UseVisualStyleBackColor = true;
             // 
@@ -51,7 +51,7 @@ namespace TaskList.Views
             this.textBoxDescription.Location = new System.Drawing.Point(26, 26);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(382, 20);
-            this.textBoxDescription.TabIndex = 1;
+            this.textBoxDescription.TabIndex = 0;
             // 
             // buttonSave
             // 
@@ -59,7 +59,7 @@ namespace TaskList.Views
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
+            this.buttonSave.Text = "&Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -68,8 +68,8 @@ namespace TaskList.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 137);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxDescription);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.checkBoxDone);
             this.Name = "TaskDetailsView";
             this.Text = "TaskDetailsView";

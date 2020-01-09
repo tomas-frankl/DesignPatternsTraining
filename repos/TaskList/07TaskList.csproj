@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\AddCommand.cs" />
+    <Compile Include="Commands\CommandFactory.cs" />
+    <Compile Include="Commands\DeleteCommand.cs" />
+    <Compile Include="Commands\EditCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Invoker.cs" />
     <Compile Include="Controllers\ITaskListPresenter.cs" />
     <Compile Include="Controllers\ITaskListView.cs" />
     <Compile Include="Controllers\TaskListPresenter.cs" />

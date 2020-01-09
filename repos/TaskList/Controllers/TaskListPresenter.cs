@@ -1,4 +1,5 @@
 ﻿using System;
+using TaskList.Commands;
 using TaskList.Models;
 
 namespace TaskList.Presenters
@@ -7,6 +8,8 @@ namespace TaskList.Presenters
     {
         private ITaskListModel model;
         public ITaskListView<TaskItem> view;
+        private Invoker invoker = new Invoker();
+        private CommandFactory cmdFactory;
 
         public ITaskListView<TaskItem> View { 
             get { return this.view; } 
@@ -16,6 +19,7 @@ namespace TaskList.Presenters
         public TaskListPresenter(ITaskListModel model)
         {
             this.model = model;
+            cmdFactory = new CommandFactory(model);
         }
 
         public void Refresh()
@@ -25,19 +29,19 @@ namespace TaskList.Presenters
 
         public void Add(TaskItem item)
         {
-            model.Add(item);
+            invoker.Execute(cmdFactory.Add(item));
             Refresh();
         }
 
         public void Delete(TaskItem item)
         {
-            model.Delete(item);
+            invoker.Execute(cmdFactory.Delete(item));
             Refresh();
         }
 
         public void Update(TaskItem item)
         {
-            model.Update(item);
+            invoker.Execute(cmdFactory.Edit(item));
             Refresh();
         }
 
@@ -45,7 +49,7 @@ namespace TaskList.Presenters
         public void AddAction()
         {
             var item = new TaskItem() { Id = Guid.Empty, Description = "<enter description>", Done = false };
-            View.OnEditAction(item);
+            View.OnAddAction(item);
         }
 
         public void DeleteAction(Guid id)
@@ -57,7 +61,21 @@ namespace TaskList.Presenters
         public void EditAction(Guid id)
         {
             var item = model.Get(id);
-            View.OnAddAction(item);
+            var clone = new TaskItem() { Id = item.Id, Description = item.Description, Done = item.Done };
+            View.OnEditAction(clone);
+        }
+
+        public void ToggleAction(Guid id)
+        {
+            var item = model.Get(id);
+            var clone = new TaskItem() { Id = item.Id, Description = item.Description, Done = !item.Done };
+            Update(clone);
+        }
+
+        public void UndoAction()
+        {
+            invoker.Compensate();
+            Refresh();
         }
     }
 }

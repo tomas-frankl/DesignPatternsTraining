@@ -27,8 +27,12 @@ namespace TaskList.Models
 
         public void Update(TaskItem item)
         {
-            var current = taskList.FirstOrDefault(t => t.Id == item.Id);
-            current = item;
+            //var current = taskList.FirstOrDefault(t => t.Id == item.Id);
+            //current = item;
+
+            var idx = taskList.FindIndex(t => t.Id == item.Id);
+            taskList.RemoveAt(idx);
+            taskList.Insert(idx, item);
         }
 
         public IEnumerable<TaskItem> GetEnumerator()

@@ -51,14 +51,16 @@ namespace TaskList.Views
                 presenter.EditAction(item.Id);
         }
 
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            presenter.UndoAction();
+        }
+        
         private void listBoxTasks_DoubleClick(object sender, EventArgs e)
         {
             var item = (TaskItem)listBoxTasks.SelectedItem;
             if (item != null)
-            {
-                item.Done = !item.Done;
-                presenter.Update(item);
-            }
+                presenter.ToggleAction(item.Id);
         }
 
         public void OnAddAction(TaskItem item)
