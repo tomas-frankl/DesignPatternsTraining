@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09CommandProcessor", "Comma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10MVVMCalculator", "MVVMCalculator\10MVVMCalculator.csproj", "{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11PrototypePatern", "PrototypePatern\11PrototypePatern.csproj", "{14D1E052-A24D-49AF-B5E8-D2F695B91E26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3AF71C3-32DB-4D3D-9F40-4835B6F59D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D1E052-A24D-49AF-B5E8-D2F695B91E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D1E052-A24D-49AF-B5E8-D2F695B91E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D1E052-A24D-49AF-B5E8-D2F695B91E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D1E052-A24D-49AF-B5E8-D2F695B91E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
