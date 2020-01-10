@@ -24,17 +24,8 @@ SOLID
 
 GUI - 2 View - MVP
 
-ListView
------------
-nazev tasku, status (done/not done)
-Akce: Add, Edit, Delete
 
-
-DetailView (vice instanci)
------------
-nazev tasku, 
-status (done/not done)
-button Save/Cancel
-
-
+Parser
+https://cs.wikipedia.org/wiki/Backusova%E2%80%93Naurova_forma
+https://en.wikipedia.org/wiki/Recursive_descent_parser
 
